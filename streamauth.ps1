@@ -1,7 +1,7 @@
 Set-Location (Split-Path $MyInvocation.MyCommand.Path)
 $scriptdir = Split-Path $MyInvocation.MyCommand.Path
 $streamurl = Read-Host -Prompt 'Stream URL'
-$channel = youtube-dl --cookies $scriptdir\Resources\cookies.txt --write-description --skip-download -o "%(uploader)s" --get-filename $streamurl
+$channel = Read-Host -Prompt 'Channel Name'
 if (-not (Test-Path -LiteralPath $scriptdir\Recordings\$channel\)) {
     
     try {
